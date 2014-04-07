@@ -6,6 +6,7 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -20,6 +21,10 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+
+    public static final int WEBSITE_FRAGMENT_INDEX = 0;
+    public static final int CALENDAR_FRAGMENT_INDEX = 1;
+    public static final int ABOUT_FRAGMENT_INDEX = 2;
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -50,9 +55,17 @@ public class MainActivity extends Activity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+        switch(position){
+            case ABOUT_FRAGMENT_INDEX:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, About.newInstance())
+                        .commit();
+                break;
+            default:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                        .commit();
+        }
     }
 
     /*
@@ -62,14 +75,14 @@ public class MainActivity extends Activity
 
     public void onSectionAttached(int number) {
         switch (number) {
-            case 1:
-                mTitle = getString(R.string.title_section1);
+            case WEBSITE_FRAGMENT_INDEX:
+                mTitle = getString(R.string.title_website_section);
                 break;
-            case 2:
-                mTitle = getString(R.string.title_section2);
+            case CALENDAR_FRAGMENT_INDEX:
+                mTitle = getString(R.string.title_calendar_section);
                 break;
-            case 3:
-                mTitle = getString(R.string.title_section3);
+            case ABOUT_FRAGMENT_INDEX:
+                mTitle = getString(R.string.title_about_section);
                 break;
         }
     }
@@ -148,6 +161,35 @@ public class MainActivity extends Activity
             super.onAttach(activity);
             ((MainActivity) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
+        }
+    }
+
+
+    public static class About extends Fragment {
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+        public static About newInstance() {
+            About fragment = new About();
+            fragment.setArguments(new Bundle());
+            return fragment;
+        }
+
+        public About() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_about, container, false);
+            return rootView;
+        }
+
+        @Override
+        public void onAttach(Activity activity) {
+            super.onAttach(activity);
         }
     }
 

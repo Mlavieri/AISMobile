@@ -1,0 +1,26 @@
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/about_mission_title"
+        android:id="@+id/about_mission_title_textView"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:paddingBottom="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/about_mission_content"
+        android:id="@+id/about_mission_content_textView"
+        android:textStyle="normal"
+        android:textSize="20dp" />
+</LinearLayout>

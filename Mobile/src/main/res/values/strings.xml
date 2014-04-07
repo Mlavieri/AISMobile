@@ -2,13 +2,14 @@
 <resources>
 
     <string name="app_name">AIS Mobile</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
-    <string name="title_section3">Section 4</string>
+    <string name="title_website_section">Website</string>
+    <string name="title_calendar_section">Events calendar</string>
+    <string name="title_about_section">About us</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
-
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_mission_title">Mission</string>
+    <string name="about_mission_content">AIS Illinois is an IT organization for students of all majors interested in information systems and information technology. Our goal is to provide value for members through services and connections. We connect our members with companies in the IT field, assist students in becoming IS/IT majors, and increase the amount of knowledge and excitement surrounding the IS/IT department in the College of Business.</string>
 </resources>
