@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AISMobile.iml" filepath="$PROJECT_DIR$/AISMobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Caldroid/Caldroid.iml" filepath="$PROJECT_DIR$/Caldroid/Caldroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mobile/Mobile.iml" filepath="$PROJECT_DIR$/Mobile/Mobile.iml" />
     </modules>
   </component>

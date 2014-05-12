@@ -23,4 +23,5 @@
         android:id="@+id/about_mission_content_textView"
         android:textStyle="normal"
         android:textSize="20dp" />
+
 </LinearLayout>

@@ -1,25 +1,23 @@
 package org.aisillinois.mobile;
 
-import android.app.Activity;
-;
 import android.app.ActionBar;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.content.Context;
-import android.net.Uri;
-import android.os.Build;
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class MainActivity extends Activity
+import com.roomorama.caldroid.CaldroidFragment;
+
+import java.util.Calendar;
+
+public class MainActivity extends FragmentActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     public static final int WEBSITE_FRAGMENT_INDEX = 0;
@@ -54,11 +52,16 @@ public class MainActivity extends Activity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-        FragmentManager fragmentManager = getFragmentManager();
-        switch(position){
+        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+        switch (position) {
+            case CALENDAR_FRAGMENT_INDEX:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, AISCalendarFragment.newInstance())
+                        .commit();
+                break;
             case ABOUT_FRAGMENT_INDEX:
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, About.newInstance())
+                        .replace(R.id.container, AboutFragment.newInstance())
                         .commit();
                 break;
             default:
@@ -149,7 +152,7 @@ public class MainActivity extends Activity
         //This section places text on the screen via textView
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
+                                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
@@ -163,34 +166,4 @@ public class MainActivity extends Activity
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
     }
-
-
-    public static class About extends Fragment {
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static About newInstance() {
-            About fragment = new About();
-            fragment.setArguments(new Bundle());
-            return fragment;
-        }
-
-        public About() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_about, container, false);
-            return rootView;
-        }
-
-        @Override
-        public void onAttach(Activity activity) {
-            super.onAttach(activity);
-        }
-    }
-
 }

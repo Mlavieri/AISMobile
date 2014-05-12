@@ -1,1 +1,1 @@
-include ':Mobile'
+include ':Mobile', 'Caldroid'

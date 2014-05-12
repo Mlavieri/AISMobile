@@ -12,4 +12,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="about_mission_title">Mission</string>
     <string name="about_mission_content">AIS Illinois is an IT organization for students of all majors interested in information systems and information technology. Our goal is to provide value for members through services and connections. We connect our members with companies in the IT field, assist students in becoming IS/IT majors, and increase the amount of knowledge and excitement surrounding the IS/IT department in the College of Business.</string>
+
+    <string name="customize">Customize</string>
+    <string name="show_dialog">Show Dialog</string>
+    <string name="undo">Undo</string>
 </resources>
