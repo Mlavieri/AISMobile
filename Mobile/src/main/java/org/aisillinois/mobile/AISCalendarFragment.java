@@ -32,8 +32,8 @@ public class AISCalendarFragment extends CaldroidFragment {
     /* Constants */
     public static final SimpleDateFormat formatter = new SimpleDateFormat("EEE MMM d, yyyy"); // Mon Jun 2, 2014 9pm
     public static final String CALENDAR_ID = "3mmb0i9rplg8s86dflrdg4h50k@group.calendar.google.com";
-    public static final String CALENDAR_URL = String.format("http://www.google.com/calendar/feeds/%s/public/basic", CALENDAR_ID);
-
+    //public static final String CALENDAR_URL = String.format("https://www.google.com/calendar/feeds/aisillinois%40gmail.com/public/basic", CALENDAR_ID);
+    public static final String CALENDAR_URL = "https://www.google.com/calendar/feeds/aisillinois%40gmail.com/public/basic";
     /* Attributes */
     HashMap<Date, Event> eventsMap; // Map that relates dates with events.
     TextView eventTitle;

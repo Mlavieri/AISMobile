@@ -2,6 +2,7 @@ package org.aisillinois.mobile;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -49,19 +50,28 @@ public class MainActivity extends FragmentActivity
                 (DrawerLayout) findViewById(R.id.drawer_layout));
     }
 
+    public MainActivity() {
+        super();
+    }
+
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         switch (position) {
+            case WEBSITE_FRAGMENT_INDEX:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, new WebViewFragment())
+                        .commit();
+                break;
             case CALENDAR_FRAGMENT_INDEX:
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, AISCalendarFragment.newInstance())
+                        .replace(R.id.container, new  AISCalendarFragment())
                         .commit();
                 break;
             case ABOUT_FRAGMENT_INDEX:
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, AboutFragment.newInstance())
+                        .replace(R.id.container, new AboutFragment())
                         .commit();
                 break;
             default:

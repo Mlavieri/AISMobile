@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="date4j">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/build/exploded-aar/AISMobile/Caldroid/unspecified/libs/date4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Caldroid/libs/date4j.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
